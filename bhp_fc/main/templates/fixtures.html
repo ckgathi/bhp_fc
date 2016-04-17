@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+table {
+    width:100%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+</style>
+	<!-- error-page-starts -->
+				<br />
+			 <div class="Error-found">
+				<div class="container">
+					<table>
+					  <tr>
+					    <th>Teams</th>
+					    <th>Grounds</th>		
+					    <th>Kick off time & date</th>
+					  </tr>
+					  <tr>
+					    <td>BHP FC vs  UB IT</td>
+					    <td>Notwane Grounds</td>		
+					    <td>18 April 2016 @ 17:00 hrs</td>
+					  </tr>
+					  <tr>
+					    <td>GSS Teachers vs BHP FC</td>
+					    <td>GSS Grounds</td>		
+					    <td>20 April 2016 @ 17:00 hrs</td>
+					  </tr>
+					  <tr>
+					    <td>BHP FC vs NDA</td>
+					    <td>Notwane Grounds</td>		
+					    <td>25 April 2016 @ 17:00 hrs</td>
+					  </tr>
+					</table>
+				</div>
+			</div>
+	<!-- errer-page-section-ends -->
+{% endblock %}

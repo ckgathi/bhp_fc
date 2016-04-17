@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+	<!-- error-page-starts -->
+			 <div class="Error-found">
+				<div class="container">
+					<div class="error-page">
+						<div class="error-page text-center">
+							<h3>4<img src="{{ STATIC_URL }}images/smile.jpg" alt="">4</h3>
+							<p>Sorry Page Not Found</p>
+							<a class="button curl-bottom-right two" href="{% url 'home_url' %}">Back To Home</a>
+						</div>
+					</div>
+				</div>
+			</div>
+	<!-- errer-page-section-ends -->
+{% endblock %}
