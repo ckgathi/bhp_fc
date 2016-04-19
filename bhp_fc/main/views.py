@@ -1,6 +1,14 @@
 from django.views import generic
 from django.shortcuts import render_to_response
+from django.shortcuts import render, get_object_or_404, redirect
 from django.template import RequestContext
+
+from django.contrib import messages
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.db.models import Q
+from django.http import HttpResponse, HttpResponseRedirect, Http404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.utils import timezone
 
 
 class Home(generic.ListView):
@@ -79,7 +87,7 @@ class Photos(generic.ListView):
         self.template_name = 'photos.html'
         self.title = 'BHP FC'
 
-    def get(self, request, *args, **kwargs):
+    def get(self, request, slug=None, *args, **kwargs):
         self.context.update({
         })
         return render_to_response(self.template_name, self.context, context_instance=RequestContext(request))
