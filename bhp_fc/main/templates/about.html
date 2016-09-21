@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 	<!-- about-page-starts -->
 	<div class="about-page">
@@ -24,7 +25,7 @@
 						<p><span>Position:</span> Striker</p>					
 					</div>
 					<div class="col-md-6 grid-img">
-						<img class="img-responsive" src="{{ STATIC_URL }}images/me1.png" alt=" " />
+						<img class="img-responsive" src="{% static 'images/me1.png' %}" alt=" " />
 					</div>
 					<div class="clearfix"> </div>
 				</div>

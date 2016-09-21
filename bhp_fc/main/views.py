@@ -9,9 +9,10 @@ from django.db.models import Q
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
+from django.views import View
 
 
-class Home(generic.ListView):
+class Home(View):
 
     def __init__(self):
         self.context = {}
@@ -21,16 +22,15 @@ class Home(generic.ListView):
     def get(self, request, *args, **kwargs):
         self.context.update({
         })
-        return render_to_response(self.template_name, self.context, context_instance=RequestContext(request))
+        return render(request, self.template_name, self.context)
 
     def post(self, request, *args, **kwargs):
         self.context.update({
             'title': self.title
         })
-        return render_to_response(self.template_name, self.context, context_instance=RequestContext(request))
+        return render(request, self.template_name, self.context)
 
     def get_context_data(self, **kwargs):
-
         return super(Home, self).get_context_data(**kwargs)
 
 
@@ -44,13 +44,13 @@ class About(generic.ListView):
     def get(self, request, *args, **kwargs):
         self.context.update({
         })
-        return render_to_response(self.template_name, self.context, context_instance=RequestContext(request))
+        return render(request, self.template_name, self.context)
 
     def post(self, request, *args, **kwargs):
         self.context.update({
             'title': self.title
         })
-        return render_to_response(self.template_name, self.context, context_instance=RequestContext(request))
+        return render(request, self.template_name, self.context)
 
     def get_context_data(self, **kwargs):
 
@@ -67,13 +67,13 @@ class Contact(generic.ListView):
     def get(self, request, *args, **kwargs):
         self.context.update({
         })
-        return render_to_response(self.template_name, self.context, context_instance=RequestContext(request))
+        return render(request, self.template_name, self.context)
 
     def post(self, request, *args, **kwargs):
         self.context.update({
             'title': self.title
         })
-        return render_to_response(self.template_name, self.context, context_instance=RequestContext(request))
+        return render(request, self.template_name, self.context)
 
     def get_context_data(self, **kwargs):
 
@@ -87,16 +87,16 @@ class Photos(generic.ListView):
         self.template_name = 'photos.html'
         self.title = 'BHP FC'
 
-    def get(self, request, slug=None, *args, **kwargs):
+    def get(self, request, *args, **kwargs):
         self.context.update({
         })
-        return render_to_response(self.template_name, self.context, context_instance=RequestContext(request))
+        return render(request, self.template_name, self.context)
 
     def post(self, request, *args, **kwargs):
         self.context.update({
             'title': self.title
         })
-        return render_to_response(self.template_name, self.context, context_instance=RequestContext(request))
+        return render(request, self.template_name, self.context)
 
     def get_context_data(self, **kwargs):
 
@@ -113,13 +113,13 @@ class Fixtures(generic.ListView):
     def get(self, request, *args, **kwargs):
         self.context.update({
         })
-        return render_to_response(self.template_name, self.context, context_instance=RequestContext(request))
+        return render(request, self.template_name, self.context)
 
     def post(self, request, *args, **kwargs):
         self.context.update({
             'title': self.title
         })
-        return render_to_response(self.template_name, self.context, context_instance=RequestContext(request))
+        return render(request, self.template_name, self.context)
 
     def get_context_data(self, **kwargs):
 
@@ -136,13 +136,13 @@ class Results(generic.ListView):
     def get(self, request, *args, **kwargs):
         self.context.update({
         })
-        return render_to_response(self.template_name, self.context, context_instance=RequestContext(request))
+        return render(request, self.template_name, self.context)
 
     def post(self, request, *args, **kwargs):
         self.context.update({
             'title': self.title
         })
-        return render_to_response(self.template_name, self.context, context_instance=RequestContext(request))
+        return render(request, self.template_name, self.context)
 
     def get_context_data(self, **kwargs):
 
@@ -159,13 +159,13 @@ class News(generic.ListView):
     def get(self, request, *args, **kwargs):
         self.context.update({
         })
-        return render_to_response(self.template_name, self.context, context_instance=RequestContext(request))
+        return render(request, self.template_name, self.context)
 
     def post(self, request, *args, **kwargs):
         self.context.update({
             'title': self.title
         })
-        return render_to_response(self.template_name, self.context, context_instance=RequestContext(request))
+        return render(request, self.template_name, self.context)
 
     def get_context_data(self, **kwargs):
 
@@ -182,13 +182,13 @@ class Players(generic.ListView):
     def get(self, request, *args, **kwargs):
         self.context.update({
         })
-        return render_to_response(self.template_name, self.context, context_instance=RequestContext(request))
+        return render(request, self.template_name, self.context)
 
     def post(self, request, *args, **kwargs):
         self.context.update({
             'title': self.title
         })
-        return render_to_response(self.template_name, self.context, context_instance=RequestContext(request))
+        return render(request, self.template_name, self.context)
 
     def get_context_data(self, **kwargs):
 
