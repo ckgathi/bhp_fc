@@ -14,6 +14,9 @@ class Fixture(models.Model):
         null=True,
         max_length=200)
 
+    def __str__(self):
+        return '{0} vs {1}'.format(self.bhp_team, self.team_agaist)
+
     class Meta:
         app_label = 'main'
         verbose_name = "Fixture"
@@ -33,6 +36,9 @@ class Result(models.Model):
         null=True,
         default=0)
 
+    def __str__(self):
+        return '{0} {1} -- {2} {3}'.format(self.fixture.bhp_team, self.bhp_score, self.team_agaist_score, self.fixture.team_agaist)
+
     class Meta:
         app_label = 'main'
         verbose_name = "Result"
@@ -47,6 +53,9 @@ class SlideShow(models.Model):
         max_length=250,
         blank=True,
         null=True)
+
+    def __str__(self):
+        return self.image_title
 
     class Meta:
         app_label = 'main'
