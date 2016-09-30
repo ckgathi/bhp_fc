@@ -24,21 +24,13 @@ th, td {
 					    <th>Grounds</th>		
 					    <th>Kick off time & date</th>
 					  </tr>
+					  {% for fixture in fixtures_list %}
 					  <tr>
-					    <td>BHP FC vs  UB IT</td>
-					    <td>Notwane Grounds</td>		
-					    <td>18 April 2016 @ 17:00 hrs</td>
+					    <td>{{ fixture.0 }} vs  {{ fixture.1 }}</td>
+					    <td>{{ fixture.2 }}</td>		
+					    <td>{{ fixture.3 }}</td>
 					  </tr>
-					  <tr>
-					    <td>GSS Teachers vs BHP FC</td>
-					    <td>GSS Grounds</td>		
-					    <td>20 April 2016 @ 17:00 hrs</td>
-					  </tr>
-					  <tr>
-					    <td>BHP FC vs NDA</td>
-					    <td>Notwane Grounds</td>		
-					    <td>25 April 2016 @ 17:00 hrs</td>
-					  </tr>
+					  {% endfor %}
 					</table>
 				</div>
 			</div>

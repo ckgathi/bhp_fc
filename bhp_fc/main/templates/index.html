@@ -5,27 +5,15 @@
 		<div class="slider">
 			<div class="callbacks_container">
 			  <ul class="rslides" id="slider">
+			  {% for slide in slides %}
 				<li>
-				  <img src="{% static 'images/slider1.jpg' %}" alt="">
+				  <img src="{% static slide.image_name %}" alt="">
 				  <div class="caption text-center">
-					<h3>The BHP team</h3>
-					<p>The team prepares for a match. Just a few minutes before the game begins at the Notwane grounds.</p>
+					<h3>{{ slide.image_title }}</h3>
+					<p>{{ slide.pic_discription }}</p>
 				  </div>
 				</li>
-				<li>
-				  <img src="{% static 'images/slider2.jpg' %}" alt="">
-					<div class="caption text-center">
-						<h3>First Draw </h3>
-					    <p>Preparations before the game, for a match that ended as a draw between BHP FC and BICC church. The team taking a team photo before captain briefs them.</p>
-				   </div>
-				</li>
-				<li>
-				  <img src="{% static 'images/slider3.jpg' %}" alt="">
-				  <div class="caption text-center">
-					 <h3>Team photo </h3>
-					<p>One of our biggest challenge is shortage of kit, some players have to use their own shorts and t-shirt that sometimes give the team too many colors. #TEAM STRUGGLES</p>
-				  </div>
-				</li>
+			  {% endfor %}
 			  </ul>
 		  </div>
 	  </div>

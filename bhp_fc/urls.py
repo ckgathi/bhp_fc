@@ -17,10 +17,14 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
-from bhp_fc.main.views import Home
-print(settings.STATIC_URL, '*&*&*&*&*&')
+from bhp_fc.main.views import Home, slides
+
+slides()
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', Home.as_view(), name='home_url'),
     url(r'^main/', include('bhp_fc.main.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.MEDIA_ROOT)
+
+admin.site.site_header = 'BHP FC'

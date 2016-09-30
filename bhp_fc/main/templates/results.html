@@ -10,38 +10,24 @@
 					  <tr>
 					    <th>Opponent</th>
 					    <th>Grounds</th>		
-					    <th>Kick off date</th>
-					    <th>Kick off time</th>
+					    <th>Kick off datetime</th>
 					    <th>Results</th>
 					  </tr>
+					  {% for result in results %}
 					  <tr>
-					    <td>Marina Nurses</td>
-					    <td>Notwane Grounds</td>		
-					    <td>11 April 2016 </td>
-					    <td>17:00 hrs</td>
-					    <td bgcolor="red">Loss 1 - 2</td>
+					    <td>{{ result.0 }}</td>
+					    <td>{{ result.1 }}</td>		
+					    <td>{{ result.2 }}</td>
+					    <td 
+					    	{% if result.5 == 0 %}
+					    		bgcolor="red"> Loss {{ result.3 }} - {{ result.4 }}
+					    	{% endif %}
+					    	{% if result.5 == 1 %}
+					    		bgcolor="#00FF00" > Win {{ result.3 }} - {{ result.4 }}
+					    	{% endif %}
+					    </td>
 					  </tr>
-					  <tr>
-					    <td>UB IT</td>
-					    <td>Notwane Grounds</td>		
-					    <td>18 April 2016 </td>
-					    <td>17:00 hrs</td>
-					    <td bgcolor="#00FF00" >Win 1 - 0</td>
-					  </tr>
-					  <tr>
-					    <td>GSS Teachers</td>
-					    <td>GSS grounds</td>		
-					    <td>20 April 2016 </td>
-					    <td>17:00 hrs</td>
-					    <td></td>
-					  </tr>
-					  <tr>
-					    <td>NDB</td>
-					    <td>Notwane</td>		
-					    <td>25 April 2016 </td>
-					    <td>17:00 hrs</td>
-					    <td></td>
-					  </tr>
+					  {% endfor %}
 					</table>
 				</div>
 			</div>

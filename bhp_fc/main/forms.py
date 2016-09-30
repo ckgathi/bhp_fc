@@ -1,16 +1,24 @@
 from django import forms
 
+from .models import Fixture, Result, SlideShow
 
-from .models import Post
 
+class FixtureForm (forms.ModelForm):
 
-class PostForm(forms.ModelForm):
     class Meta:
-        model = Post
-        fields = [
-            "title",
-            "content",
-            "image",
-            "draft",
-            "publish",
-        ]
+        model = Fixture
+        fields = '__all__'
+
+
+class ResultForm (forms.ModelForm):
+
+    class Meta:
+        model = Result
+        fields = '__all__'
+
+
+class SlideShowForm (forms.ModelForm):
+
+    class Meta:
+        model = SlideShow
+        fields = '__all__'
