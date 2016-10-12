@@ -221,23 +221,23 @@ class Players(generic.ListView):
 
 def slides():
     images = [
-        ['images/slide/Ima.JPG', 'Ima', 'Before our game against BNSC as Ima warms up for the game.'],
-        ['images/slide/fan1.JPG', 'One of our loyal Fan', 'The team is greatful for our fans attend games, Team Lab representing'],
-        ['images/slide/killer4.JPG', 'Killer4', 'Before our game against BNSC as killer4 warms up for the game.'],
-        ['images/slide/mosco.JPG', 'Skhoza', 'Before our game against BNSC as Skhoza warms up for the game.'],
-        ['images/slide/new_kit2.JPG', 'BHP FC Team, new Kit', 'The team is greatful for the BHP management for sponsoring the team with a kit.'],
-        ['images/slide/phil.JPG', 'Phil', 'Before our game against BNSC as Phil warms up for the game. Also a great goal keeper with the most clean sheets'],
-        ['images/slide/sets.JPG', 'Sets Anderson', 'Before our game against BNSC as Sets Anderson warms up for the game. One of our great defenders'],
-        ['images/slide/slider2.jpg', 'BHP FC on old kit', 'As the team was still grwing on an old kit. Match agaist UB IT at notwane grounds'],
-        ['images/slide/SirOne.JPG', 'SirOne', 'Before our game against BNSC as SirOne warms up for the game. Still on injury, we await his return to the grounds.'],
-        ['images/slide/keeper.JPG', 'Kepper', 'Before our game against BNSC as Keeper warms up for the game. Also a great goal keeper'],
-        ['images/slide/mogwele.JPG', 'Mogwele', 'Before our game against BNSC as Mogwele warms up for the game.'],
-        ['images/slide/new_kit1.JPG', 'BHP FC Team, new Kit', 'The team is greatful for the BHP management for sponsoring the team with a kit.'],
-        ['images/slide/nkozana.JPG', 'Nkozana', 'Before our game against BNSC as Nkozana warms up for the game.'],
-        ['images/slide/roni.JPG', 'Ronald', 'Before our game against BNSC as Roni warms up for the game.'],
-        ['images/slide/slider1.jpg', 'BHP FC on old kit', 'As the team was still grwing on an old kit. Match agaist UB IT at notwane grounds'],
-        ['images/slide/slider3.jpg', 'BHP FC on old kit', 'As the team was still grwing on an old kit. Match agaist UB IT at notwane grounds'],
-        ['images/slide/keeper-weddings.jpeg', 'Keeper Install Wife 1.0', 'Congratulations to our goal keeper for successful installation of wife 1.0. We wish you all the best and take good care of your wife Sir. Please always apply for Visa well in advance. We are waiting for your return to the grounds'],]
+        ['images/slide/Ima.png', 'Ima', 'Before our game against BNSC as Ima warms up for the game.'],
+        ['images/slide/fan1.png', 'One of our loyal Fan', 'The team is greatful for our fans attend games, Team Lab representing'],
+        ['images/slide/killer4.png', 'Killer4', 'Before our game against BNSC as killer4 warms up for the game.'],
+        ['images/slide/mosco.png', 'Skhoza', 'Before our game against BNSC as Skhoza warms up for the game.'],
+        ['images/slide/new_kit2.png', 'BHP FC Team, new Kit', 'The team is greatful for the BHP management for sponsoring the team with a kit.'],
+        ['images/slide/phil.png', 'Phil', 'Before our game against BNSC as Phil warms up for the game. Also a great goal keeper with the most clean sheets'],
+        ['images/slide/sets.png', 'Sets Anderson', 'Before our game against BNSC as Sets Anderson warms up for the game. One of our great defenders'],
+        ['images/slide/slider2.png', 'BHP FC on old kit', 'As the team was still grwing on an old kit. Match agaist UB IT at notwane grounds'],
+        ['images/slide/SirOne.png', 'SirOne', 'Before our game against BNSC as SirOne warms up for the game. Still on injury, we await his return to the grounds.'],
+        ['images/slide/keeper.png', 'Kepper', 'Before our game against BNSC as Keeper warms up for the game. Also a great goal keeper'],
+        ['images/slide/mogwele.png', 'Mogwele', 'Before our game against BNSC as Mogwele warms up for the game.'],
+        ['images/slide/new_kit1.png', 'BHP FC Team, new Kit', 'The team is greatful for the BHP management for sponsoring the team with a kit.'],
+        ['images/slide/nkozana.png', 'Nkozana', 'Before our game against BNSC as Nkozana warms up for the game.'],
+        ['images/slide/roni.png', 'Ronald', 'Before our game against BNSC as Roni warms up for the game.'],
+        ['images/slide/slider1.png', 'BHP FC on old kit', 'As the team was still grwing on an old kit. Match agaist UB IT at notwane grounds'],
+        ['images/slide/slider3.png', 'BHP FC on old kit', 'As the team was still grwing on an old kit. Match agaist UB IT at notwane grounds'],
+        ['images/slide/keeper-weddings.png', 'Keeper Install Wife 1.0', 'Congratulations to our goal keeper for successful installation of wife 1.0. We wish you all the best and take good care of your wife Sir. Please always apply for Visa well in advance. We are waiting for your return to the grounds'],]
     for image in images:
         if not SlideShow.objects.filter(image_name=image[0]):
             SlideShow.objects.create(
