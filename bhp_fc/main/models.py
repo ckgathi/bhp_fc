@@ -1,22 +1,77 @@
 from django.db import models
 
+GROUNDS = (
+    ('notwane_grounds', 'Notwane Grounds'),
+    ('national_stadium', 'National Stadium'),
+    ('motopi_grounds', 'Motopi Grounds'),
+    ('gss_grounds', 'GSS Grounds'),
+    ('ub_stadium', 'UB Stadium')
+)
+
+FIXTURE_TYPE = (
+    ('league', 'League Game'),
+    ('tournament', 'Tournament Game'),
+    ('friendly', 'Friendly Game')
+)
+
+TEAM_NAMES = (
+    ('bhp_fc', 'BHP FC (Botwana Harvard)'),
+    ('motopi_fc', 'Motopi FC (Choppies)'),
+    ('ub_it', 'UB IT (University of Botswana IT department)'),
+    ('bnsc_fc', 'BNSC (Botswana National Sport Council)'),
+    ('ndb_fc', 'NDB (National Development Bank)'),
+    ('gss_fc', 'GSS (Gaborone Senior Secondary School)'),
+    ('moh_fc', 'MoH fc (Ministry of Health)'),
+    ('stanbic_fc', 'Stanbic Bank Botswana'),
+    ('bob_fc', 'BoB (Bank of Botswana)')
+)
+
+LEAGUE_NAMES = (
+    ('workers_league', 'Workers League')
+)
+
+
+class LeagueTeams(models.Model):
+
+    team_name = models.CharField(
+        max_length=200,
+        verbose_name="Name of team in a League",
+        choices=TEAM_NAMES,)
+
+    league_name = models.CharField(
+        max_length=200,
+        verbose_name="Name of team in a League",
+        choices=LEAGUE_NAMES,)
+
 
 class Fixture(models.Model):
 
-    team_a = models.CharField(max_length=200, verbose_name="Name of team home",)
+    team_home = models.CharField(
+        max_length=200,
+        verbose_name="Name of team home",
+        choices=TEAM_NAMES,)
 
-    team_agaist = models.CharField(max_length=200, verbose_name="Name of team away",)
+    team_away = models.CharField(
+        max_length=200,
+        verbose_name="Name of team home",
+        choices=TEAM_NAMES,)
 
     game_datetime = models.DateTimeField(
         verbose_name="Kick off time",
-        blank=True,
         null=True,)
 
     grounds = models.CharField(
         verbose_name="Grounds where the game is played.",
-        blank=True,
         null=True,
+        choices=GROUNDS,
         max_length=200)
+
+    fixture_type = models.CharField(
+        verbose_name="Is the game a league game, friendly or tournament?",
+        default='league',
+        choices=FIXTURE_TYPE,
+        null=True,
+        max_length=50)
 
     def __str__(self):
         return '{0} vs {1}'.format(self.bhp_team, self.team_agaist)
@@ -50,9 +105,16 @@ class Result(models.Model):
 
 
 class Team(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(
+        max_length=200,
+        verbose_name="Name of team home",
+        choices=TEAM_NAMES,)
 
-    team_grounds = models.CharField(max_length=200)
+    team_grounds = models.CharField(
+        verbose_name='Name of the team\'s grounds',
+        choices=GROUNDS,
+        null=True,
+        max_length=200)
 
     games_played = models.IntegerField(
         verbose_name="Opponent Scored goals.",
